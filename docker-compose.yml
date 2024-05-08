@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  api_service:
+    image: apiservice
+    build: .
+    restart: always
+    ports:
+      - 8085:8085
+    networks:
+      - springapimysql-net
+    environment:
+      - spring.datasource.url=jdbc:mysql://mysqldb:3306/crud_demo?allowPublicKeyRetrieval=true
+    depends_on:
+      - mysqldb
+
+    volumes:
+      - .m2:/root/.m2
+
+  mysqldb:
+    image: "mysql"
+    restart: always
+    ports:
+      - 3307:3306
+    networks:
+      - springapimysql-net
+    environment:
+      MYSQL_DATABASE: crud_demo
+      MYSQL_PASSWORD: Radixweb8
+      MYSQL_ROOT_PASSWORD: Radixweb8
+networks:
+  springapimysql-net:
