@@ -50,7 +50,7 @@ jobs:
       with:
         image: parvadave1090/crud_demo
         tags: latest
-        registry: docker
+        registry: docker.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
