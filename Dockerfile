@@ -1,8 +1,8 @@
 FROM openjdk:17
 ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} crud-demo-0.0.1-SNAPSHOT.jar
+COPY ${JAR_FILE} crud_demo.jar
 EXPOSE 8085
-ENTRYPOINT ["java","-jar","/crud-demo-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/crud_demo.jar"]
 
 
 # FROM maven:3.8.3-openjdk-17 AS build

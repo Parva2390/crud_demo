@@ -132,7 +132,9 @@
 					</execution>
 				</executions>
 			</plugin>
+
 		</plugins>
+		<finalName>crud_demo</finalName>
 	</build>
 
 </project>
