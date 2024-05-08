@@ -56,9 +56,7 @@ jobs:
 #        password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v6
-      run: |
-          docker-compose build
-          docker-compose push
+      run: docker-compose up
       env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
